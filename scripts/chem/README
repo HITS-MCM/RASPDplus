@@ -1,0 +1,98 @@
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#>  Copyright (c) 2013 2014 2015 2016 2017 2018 2019 2020
+#>  Heidelberg Institute of Theoretical Studies (HITS, www.h-its.org)
+#>  Schloss-Wolfsbrunnenweg 35
+#>  69118 Heidelberg, Germany
+#>
+#>  Supercomputing Facility for Bioinformatics and Computational Biology, IIT Delhi (http://www.scfbio-iitd.res.in/)
+#>  Indian Institute of Technology
+#>  Hauz Khas, New Delhi - 110016, India
+#>
+#>  Please send your contact address to get information on updates and
+#>  new features to "mcmsoft@h-its.org". Questions will be
+#>  answered as soon as possible.
+#>  References:
+#>  A rapid identification of hit molecules for target proteins via physico-chemical descriptors.
+#>  (2013) Phys. Chem. Chem. Phys., 15, 9107-9116.
+#>  Authors: Goutam Mukherjee and B. Jayaram
+#>  Version 1.0 (April 2013)
+
+#>  RASPD+: Fast protein-ligand binding free energy prediction using simplified physicochemical features
+#>  Authors: Stefan Holderbach, Lukas Adam, B. Jayaram, Rebecca C. Wade, Goutam Mukherjee
+#>  Version 1.0 (June 2020)
+#>  Manuscript in preparation, 2020
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+#>  Script name: RASPD_Ligand_parameter.sh
+/**
+Author: Goutam Mukherjee
+Purpose: Generate physicochemical parameter of ligand (drug-like) molecule
+How to run:
+bash RASPD_Ligand_parameter.sh <ligand id>
+Say,
+ligand id is: lig.pdb
+bash RASPD_Ligand_parameter.sh lig
+Please note that "lig.pdb" file must be present where the script, "RASPD_Ligand_parameter.sh" is executed.
+Output file is:
+"MOLECULARPROPERTY" contains an information about physicochemical properties of query ligand molecule (say, lig.pdb)
+**/
+
+#>  Script name: script_customized.sh
+/**
+Author: Stefan Holderbach, Heidelberg University and Goutam Mukherjee
+How to run:
+bash script_customized.sh <JobID> <protein-4-letter-code (without “.pdb” extension)> <Active_Site_Identifier ID> <Method> <`cat $data_path/select_parameter.txt | awk '{printf($2" ")}'`>
+Say, JobID is: Customized_Screening_35955430 
+protein-4-letter-code = 1NHZ.pdb 
+Identifier ID =  486
+Method(s) = erf, rf, dnn, knn, svr, esvr, lr and a combinations of all of these methods (all).   
+bash script_customized.sh Customized_Screening_35955430 1NHZ 486 lr `cat $data_path/select_parameter.txt | awk '{printf($2" ")}'`
+or,
+bash script_customized.sh Customized_Screening_35955430 1NHZ 486 erf `cat $data_path/select_parameter.txt | awk '{printf($2" ")}'`
+Output files: 
+(i) FinalResult.txt (Contains molecule-id in first column and the predicted binding free energies of the million molecules in second column)
+(ii) target.smi (Contains SMILES Code of the million molecules)
+**/
+
+#>  Script name: script_million.sh
+/**
+Author: Stefan Holderbach, Heidelberg University and Goutam Mukherjee
+How to run:
+bash script_million.sh <JobID> <protein-4-letter-code (without “.pdb” extension)> <Active_Site_Identifier ID> <Method> <`cat $data_path/select_parameter.txt | awk '{printf($2" ")}'`>
+Say, JobID is: Screening_2106683 
+protein-4-letter-code = 1NHZ.pdb 
+Identifier ID =  486
+Method(s) = erf, rf, dnn, knn, svr, esvr, lr and a combinations of all of these methods (all). 
+bash script_million.sh  Screening_2106683 1NHZ 486 lr `cat $data_path/select_parameter.txt | awk '{printf($2" ")}'`
+or,
+bash script_million.sh  Screening_2106683 1NHZ 486 erf `cat $data_path/select_parameter.txt | awk '{printf($2" ")}'`
+Output files: 
+(i) FinalResult.txt (Contains molecule-id in the first column and predicted binding free energies of the million molecules in the second column)
+(ii) target.smi (Contains SMILES Code of the million molecules)
+**/
+
+#>  Script name: lp4.pl
+/**
+It calculate the bond order of a molecule from the output of Connect2.0.exe programme.
+**/
+
+#>  Script name: line_select.pl
+/**
+It select lines from a file based on user specified line numbers
+**/
+
+#>  Script name: substructure_search_rdkit.py
+/**
+Author: Stefan Holderbach, Heidelberg University
+Requirements: python, rdkit 
+How to run:
+conda activate raspdml
+python substructure_search_rdkit.py -q query.txt -t target.txt -o output.txt
+conda deactivate
+**/
+
+#>  Script name: trapp_volume.sh
+/**
+Author: Jui-Hung Yuan, Heidelberg Institute for Theoretical Studies HITS gGmbH, and Goutam Mukherjee
+This script calculates the volume of ligand binding pocket of a protein
+**/

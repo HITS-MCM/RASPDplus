@@ -1,0 +1,214 @@
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#>  Copyright (c) 2013 2014 2015 2016 2017 2018 2019 2020
+#>
+#>  Supercomputing Facility for Bioinformatics and Computational Biology, IIT Delhi (http://www.scfbio-iitd.res.in/)
+#>  Indian Institute of Technology
+#>  Hauz Khas, New Delhi - 110016, India
+#>
+#>  Please send your contact address to get information on updates and
+#>  new features to "mcmsoft@h-its.org". Questions will be
+#>  answered as soon as possible.
+#>  References:
+#>  A rapid identification of hit molecules for target proteins via physico-chemical descriptors.
+#>  (2013) Phys. Chem. Chem. Phys., 15, 9107-9116.
+#>  Authors: Goutam Mukherjee and B. Jayaram
+#>  Version 1.0 (April 2013)
+
+#>  RASPD+: Fast protein-ligand binding free energy prediction using simplified physicochemical features
+#>  Authors: Stefan Holderbach, Lukas Adam, B. Jayaram, Rebecca C. Wade, Goutam Mukherjee
+#>  Version 1.0 (June 2020)
+#>  Manuscript in preparation, 2020
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#>  Programme name: CM-PL.c
+/*
+ * Written by Goutam Mukherjee
+ *Purpose: Calculate center of mass of a ligand (drug or drug-like small molecule).
+ *Input file: 3D structure of Protein-ligand complex in pdb file format format with identifier ID is always *DRG* without chain informaton
+ * How to run:
+ * ./CM-PL.exe <PDB-ID> 
+ * say,
+ * ./pdb2noh.exe ligand.pdb
+*/
+
+#>  Programme name: pdb2chaininfo.c
+/*
+ * Written by Goutam Mukherjee
+ * This code listing the user specified identifier-ids from the protein.
+ * How to run:
+ * ./pdb2chaininfo.exe <PDB-ID> <identifier-id>
+ * say,
+ * ./pdb2chaininfo.exe 1NHZ.pdb 486
+*/
+
+#>  Programme name: pdb2noh.c
+/*
+ * Written by Goutam Mukherjee
+ *Purpose: Remove hydrogen atoms from a protein.
+ * How to run:
+ * ./pdb2noh.exe <PDB-ID> 
+ * say,
+ * ./pdb2noh.exe 1a30.pdb (source: wget http://www.scfbio-iitd.res.in/software/drugdesign/Method1/1a30.pdb)
+*/
+
+#>  Programme name: pdb2pdb.c
+/*
+ * Written by Goutam Mukherjee
+ *Purpose: Format a pdf file of ligand (non-standard) molecule.
+ * How to run:
+ * ./pdb2pdb.exe <ligand name with extension (.pdb)> 
+ * say,
+ * ./pdb2pdb.exe ligand.pdb
+*/
+
+#>  Programme name: print_volm_1M.c
+/*
+ * Written by Goutam Mukherjee
+ * Purpose: print a number by 1043549 times (size of million molecule data set)
+ * One can do it by simple perl command as well like, 
+ * perl -ne 'for$i(0..1043549){print}' file
+ */
+
+#>  Programme name: print_volm_customized.c
+/*
+ * Written by Goutam Mukherjee
+ * Purpose: print a number by multiple times (size of customized molecule data set)
+ * One can do it by simple perl command as well like,
+ * perl -ne 'for$i(0..$line){print}' file
+ */
+
+#>  Programme name: protein-res-cm-cal.c
+/*
+ * Written by Goutam Mukherjee
+ *Purpose: Convert PDB format of a protein to RASPD(+) compatible format.
+ * How to run:
+ * ./protein-res-cm-cal.exe <PDBID of hydrogen added protein coordinates> 
+ * say,
+ * ./protein-res-cm-cal.exe 1NHZ-hydrogen.pdb
+ * Please note that protein should not have any chain information and hydrogen added.
+ * For more information, please read the header of the programme.
+*/
+
+#>  Programme name: protein_param_calc.cpp
+/*
+ * Written by Satyanarayana Rao (SCFBio, IITD currently at University of Colorado, Denver) and Goutam Mukherjee
+ *Purpose: Calculate physicochemical parameters of the active site of a protein.
+ * How to run:
+ * ./protein_param_calc <Output of protein-res-cm-cal.exe> <Output of maxD_calculator.exe> <Center of mass of protein active site (this information is passed as an argument)> 
+* For more information, please read the header of the programme.
+*/
+
+#>  Programme name: paste.c
+/*
+ * Written by Goutam Mukherjee
+ * Purpose: This code prints the physicochemical parameters separated by ";"
+ * Input file are the physicochemical parameters of protein and ligands separated by a space.
+ * How to run:
+ * ./paste.exe Protein-Ligand_Parameter >Protein-Ligand_Parameter.txt
+/*
+
+#>  Programme name: final_select_all.c
+/*
+ * Written by Goutam Mukherjee
+ * Purpose: This code prints all seven predicted binding free energies of small drug-like molecules having physicochemical parameters within a given/default range which is given in ../data/select_parameter.txt.
+ *
+ */
+
+#>  Programme name: final_select.c
+/*
+ * Written by Goutam Mukherjee
+ * Purpose: This code prints the predicted binding free energies from a single method of small drug-like molecules having physicochemical parameters within the given/default range which is given in ../data/select_parameter.txt.
+ */
+
+#>  Programme name: pdbtopdb.c
+/*
+ * Written by Goutam Mukherjee
+ *Purpose: Format a pdf file of ligand (non-standard) molecule.
+ * How to run:
+ * ./pdb2pdb.exe <ligand name with extension (.pdb)> <output.pdb>
+ * say,
+ * ./pdb2pdb.exe ligand.pdb output.pdb
+*/
+
+#>  Programme name: maxD_calculator.cpp
+/*
+ * Written by Goutam Mukherjee
+ * Purpose: This code print the distance of an atom in a molecule from its center of mass.
+ * How to run:
+ * ./maxD_calculator.exe <ligand id> <com_ligand> | sort -n | tail -n 1 
+ * ./maxD_calculator.exe ligand.pdb com_ligand | | sort -n | tail -n 1 [say center of mass of the ligand is 0,0,0 here]
+ */
+
+#>  Programme name: paste_ml_format.c
+/*
+ * Written by Goutam Mukherjee
+ * Purpose: This code print the physicochemical parameters separated by ";" and printing a row with all zero values if of wiener, molar refractivity or, molecular weight column found zero.
+ * Input file is the physicochemical parameters of protein and ligands separated by a space.
+ * How to run:
+ * ./paste_ml_format.exe Protein-Ligand_Parameter >Protein-Ligand_Parameter.txt
+ * Input file (Protein-Ligand_Parameter)
+*/
+
+#>  Programme name: print_volm_multiple.c
+/*
+ * Written by Goutam Mukherjee
+ * Purpose: print a number by a specified times (argv[2] inside the programme provide this information)
+ */ 
+
+#>  Programme name: paste_ml_format_4smiles.c
+/*
+ * Written by Goutam Mukherjee
+ * Purpose: This code print the physicochemical parameters separated by ";" and printing a row with all zero values if of wiener, molar refractivity or, molecular weight column found zero.
+ * Input file is the physicochemical parameters of protein and ligands separated by a space. 
+ */
+
+#>  Programme name: mass.c
+/*
+ * Written by Goutam Mukherjee
+ * Input is a pdb file without chain information of a ligand
+ * Purpose: Calculate molecular weight of small drug-like molecule
+ */
+
+#>  Programme name: windex_single.cpp
+/**To calculate the Wiener index of a molecule from a PDB file.
+*WORKING:
+*      1.Searches for lines starting with "ATOM" or "HETATM" to calculate the number of atom in molecule
+*      2.Creates a graph with number of nodes = number of atoms.
+*      3.Searches for lines starting with "CONECT" and then adds edges between relevant atoms using functions processline()  and addEdge().
+*      4.Stores Bond Order between atoms in array bond[][];
+*      5.Runs Dijkstra's algorithm to establish shortest path between atoms and stores this information in array windex[][]
+*      6.Calculates and prints the Wiener index
+
+*USAGE : Usage: ./windex_list.exe <PDB file>
+*WARNINGS: Program takes a specific format of PDB file, example file appended at the end
+*DEPENDENCIES:PDB file output from Connect2.0.exe programme
+*Author: Abhinav Singh      Created: 06-07-2014     Modified: 10-07-2014
+*Status: Completed
+**/
+
+#>  Programme name: pdbarrange.c
+/*
+ * Written by Goutam Mukherjee
+ * Purpose: This program will arrange the atoms present in pdb file. It first print carbon atoms corresponding line from a pdb file then, nitrogen, oxygen and followed S, P, halogens and H atoms. 
+ */
+
+#>  Programme name: lp1.c, lp2.c, lp3.c, lp5.c, lp6.c, lp7.c, lp8.c 
+/*
+Used for logP and molar refractivity calculations.
+*/
+
+Programme name: hbd_hba.c count # of H-bond donor and acceptors in a ligand.
+
+#>  Programme name: lipi.c
+/*
+ * Written by Goutam Mukherjee
+ *Purpose: This program will concatenate hydrogen bond donor, acceptor, logP, molar refractivity and wiener index values in a single file. 
+ * How to run:
+ * ./lipi.exe <hydrogen bond donor> <hydrogen bond acceptor> <lopP value> <molar refractivity value> <wiener index>
+*/
+
+#>  Programme name: param_chek_nonzero.c
+/*
+ * Written by Goutam Mukherjee
+ * Purpose: Check whether molar refractivity or, wiener or, molecular weight value is zero or, non zero. This program will then select only non zero cases and the corresponding line numbers. 
+ */
+

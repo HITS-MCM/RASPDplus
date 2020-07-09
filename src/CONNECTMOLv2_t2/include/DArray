@@ -1,0 +1,66 @@
+#ifndef __INCLUDED_DARRAY
+#define __INCLUDED_DARRAY 
+#include <iostream>
+
+/*	AUTHOR		: Vidhu S. Pandey
+	DESCRIPTION	: Dynamic one dimension array, random access
+	USAGE		:
+*/ 
+
+
+template <class T>
+class DArray{
+
+	private:
+		T *arr;
+		unsigned len;
+		T* newArray(){
+			T *tmp;
+			tmp = new T[len];
+			if(!tmp)
+				cout << "INSUFFICIENT MEMORY - DArray::newArray()"<< endl;
+			return tmp;
+		}
+
+
+	public:
+		DArray(unsigned n=0) {
+			//cout<< "\nDArray const called"<< endl;
+			arr = NULL; len=n;
+			if( n!=0) arr = newArray();
+		}
+		
+		void create(unsigned n){
+			clear();
+			arr=NULL;
+			len = n;
+			if (n!=0)
+				arr = newArray();
+		}
+		
+		DArray(const DArray<T>& argArr){
+			len = argArr.len;
+			arr = newArray();
+			for(unsigned i=0;i<len;i++)
+				arr[i] = argArr[i];
+		}
+		
+		DArray<T>& operator=(const DArray<T>& argArr){
+			if(&argArr == this) 
+				return *this;
+			
+			len = argArr.len;
+			delete [] arr;
+			arr = newArray();
+			for(unsigned i=0;i<len;i++)
+				arr[i] = argArr[i];
+			return *this;			
+		}
+		
+		T& operator[](unsigned i) const{  return arr[i]; }
+		void clear() {delete [] arr; arr=NULL; len=0;} 
+		~DArray(){ clear();}
+		unsigned size() const { return len; } 
+};
+
+#endif

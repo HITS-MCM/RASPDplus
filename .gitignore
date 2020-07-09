@@ -1,0 +1,15 @@
+*.bak
+bin/**
+*.o
+*.so
+*.exe
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.vscode/
+.idea/
+example/*.sh
+example/*/*
+customized_data/*
+config/my_init.sh

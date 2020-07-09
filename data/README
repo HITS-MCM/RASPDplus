@@ -1,0 +1,54 @@
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#>  Copyright (c) 2013 2014 2015 2016 2017 2018 2019 2020
+#>  Heidelberg Institute of Theoretical Studies (HITS, www.h-its.org)
+#>  Schloss-Wolfsbrunnenweg 35
+#>  69118 Heidelberg, Germany
+#>
+#>  Supercomputing Facility for Bioinformatics and Computational Biology, IIT Delhi (http://www.scfbio-iitd.res.in/)
+#>  Indian Institute of Technology
+#>  Hauz Khas, New Delhi - 110016, India
+#>
+#>  Please send your contact address to get information on updates and
+#>  new features to "mcmsoft@h-its.org". Questions will be
+#>  answered as soon as possible.
+#>  References:
+#>  A rapid identification of hit molecules for target proteins via physico-chemical descriptors.
+#>  (2013) Phys. Chem. Chem. Phys., 15, 9107-9116.
+#>  Authors: Goutam Mukherjee and B. Jayaram
+#>  Version 1.0 (April 2013)
+
+#>  RASPD+: Fast protein-ligand binding free energy prediction using simplified physicochemical features
+#>  Authors: Stefan Holderbach, Lukas Adam, B. Jayaram, Rebecca C. Wade, Goutam Mukherjee
+#>  Version 1.0 (June 2020)
+#>  Manuscript in preparation, 2020
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+#>  File name: maxdistance
+This file contains DMax value (maximum distance of an atom in a ligand from its center of mass) of 1043549 ligand molecules.
+
+#>  File name: PARAMETER_MW
+This file contains physicochemical parameters (# Hydrogen-bond donor; #Hydrogen-bond acceptor; logP; Molar refractivity; Wiener index and Molecular weight) of 1043549 ligand molecules.  
+
+#>  File name: PDBID
+This file contains molecule-id of 1043549 ligand molecules.
+
+#>  File name: ZINCID
+This file contains ZINCIDs of 1043549 ligand molecules. Order is the same as the PDBID
+
+#>  File name: s1.cmd
+Input file to add hydrogen in a protein using AMBER
+
+#>  File name: target.txt
+It contains SMILES code of 1043549 ligand molecules. Hence, 3D coordinates are not provided.
+
+#>  File name: select_parameter.txt
+Contains the following range of physicochemical parameters along with cut off binding energy and number of cores 
+Number_of_Cores: 32
+Wiener_Index_Minimum_Range: 		0 to 5000000
+H-Bond-Donor_Minimum_Range: 		0 to 10000
+H-Bond_Acceptor_Minimum_Range:		0 to 10000
+LogP_Minimum_Range: 	    	    -1000 to 1000
+Molar_Refractivity_Minimum_Range: 	0 to 10000
+Molecular_Weight-Minimum_Range: 	0 to 10000
+Predicted_Binding_Energy: 		1000
+

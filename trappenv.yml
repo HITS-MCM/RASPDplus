@@ -1,0 +1,50 @@
+name: trappenv
+channels:
+  - openbabel
+  - anaconda
+  - conda-forge
+  - defaults
+  - ambermd
+dependencies:
+  - ambertools
+  - biopython=1.73
+  - blas=1.0
+  - bzip2=1.0.6
+  - ca-certificates=2019.3.9
+  - cairo=1.14.12
+  - certifi=2019.3.9
+  - fontconfig=2.13.0
+  - freetype=2.9.1
+  - glib=2.56.2
+  - icu=58.2
+  - intel-openmp=2019.3
+  - libedit=3.1.20181209
+  - libffi=3.2.1
+  - libgcc=7.2.0
+  - libgcc-ng=8.2.0
+  - libgfortran-ng=7.3.0
+  - libpng=1.6.36
+  - libstdcxx-ng=8.2.0
+  - libuuid=1.0.3
+  - libxcb=1.13
+  - libxml2=2.9.9
+  - mkl=2019.3
+  - mkl_fft=1.0.10
+  - mkl_random=1.0.2
+  - ncurses=6.1
+  - numpy=1.16.2
+  - numpy-base=1.16.2
+  - openbabel=2.4.1
+  - openssl=1.1.1b
+  - pcre=8.43
+  - pip=19.0.3
+  - pixman=0.38.0
+  - python=2.7.16
+  - readline=7.0
+  - setuptools=40.8.0
+  - sqlite=3.27.2
+  - tk=8.6.8
+  - wheel=0.33.1
+  - xz=5.2.4
+  - zlib=1.2.11
+

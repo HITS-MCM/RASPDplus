@@ -1,0 +1,16 @@
+Programme name: Connect2.0.exe
+/*
+    Author          :   Vidhu S. Pandey
+    Description     :   Main module for generating connectivity and bond order in
+                        small molecules
+    Date            :   10/12/2006
+    Revised         :   09/06/2007
+    
+    Version 2.0
+    Antechamber bond distance is incorporated (no need for bonddist.txt)
+    
+    
+    Copyright. All rights reserved.
+*/
+
+

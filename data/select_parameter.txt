@@ -1,0 +1,14 @@
+Number_of_Cores: 32
+Wiener_Index_Minimum_Range: 0
+Wiener_Index_Maximum_Range: 100000000
+H-Bond-Donor_Minimum_Range: 0
+H-Bond-Donor_Maximum_Range: 10000
+H-Bond_Acceptor_Minimum_Range: 0
+H-Bond_Acceptor_Maximum_Range: 10000
+LogP_Minimum_Range: -1000
+LogP_Maximum_Range: 1000
+Molar_Refractivity_Minimum_Range: 0
+Molar_Refractivity_Maximum_Range: 10000
+Molecular_Weight-Minimum_Range: 0
+Molecular_Weight-Maximum_Range: 9000000
+Predicted_Binding_Energy: 1000
