@@ -2,7 +2,7 @@
 
 This repository contains the code used to create the RASPD+ descriptors and machine learning models and shell scripts for approximate protein ligand binding energy useful for prefiltering in virtual screening experiments.
 
-Additional data and model weights can be found on zenodo
+Additional data and the associated model weights can be found on zenodo (https://doi.org/10.5281/zenodo.3937426)
 
 ## Documentation
 
@@ -14,7 +14,7 @@ A user documentation documentation can be found at `doc/ReadMe-RASPDPlus.pdf`. F
 
 * unixoid system (tested on Ubuntu 18.04 LTS)
 * `bash` shell to run the CLI scripts
-* `conda` for management of python dependencies
+* `conda` for management of python dependencies (https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
 * `gcc`, `g++`, `make`
 * `TRAPP` >= 4.0.1 (https://www.h-its.org/downloads/trapp/)
 
@@ -43,7 +43,7 @@ The folder `ml` contains the code to train and evaluate the machine learning mod
 
 ### `weights`
 
-In this folder the model weights are placed. You might need to download them from zenodo
+In this folder the model weights are placed. You might need to download them from zenodo (https://doi.org/10.5281/zenodo.3937426)
 
 ### `data`
 
@@ -87,11 +87,11 @@ Alternatively the configuration provided by this script can be moved to your bas
 
 ## Copyright
 
-Heidelberg Institute of Theoretical Studies (HITS, www.h-its.org)\
+Heidelberg Institute of Theoretical Studies (HITS, www.h-its.org) \
 Schloss-Wolfsbrunnenweg 35\
 69118 Heidelberg, Germany
 
-Supercomputing Facility for Bioinformatics and Computational Biology, IIT Delhi (http://www.scfbio-iitd.res.in/)\
+Supercomputing Facility for Bioinformatics and Computational Biology, IIT Delhi (http://www.scfbio-iitd.res.in/) \
 Indian Institute of Technology\
 Hauz Khas, New Delhi - 110016, India
 
