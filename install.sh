@@ -58,3 +58,8 @@ cd $raspd_root/src
 make
 
 cd $raspd_root
+
+wget 'https://zenodo.org/record/3937426/files/weights.tar.gz?download=1'
+
+tar -xzf weights.tar.gz
+
