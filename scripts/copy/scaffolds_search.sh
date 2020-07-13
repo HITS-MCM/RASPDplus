@@ -45,8 +45,8 @@ eval "$($conda_root/condabin/conda shell.bash hook)"
 
 if [ -z "$raspd_root" ]
 then
-	echo -e '\033[1mPlease set path of the RASPDplus repository, miniconda and TRAPP to <path_to_RASPDplus_repository>/config/init.sh file and source it\033[0m'
-        echo -e '\033[1m   source RASPDplus/config/init.sh\033[0m'
+	echo -e '\033[1mPlease set path of the RASPD+ repository, miniconda and TRAPP to <path_to_RASPD+_repository>/config/init.sh file and source it\033[0m'
+        echo -e '\033[1m   source <path_to_RASPD+_repository>/config/init.sh\033[0m'
         echo " "
         echo -e '\033[1m script usage:\033[0m'
         echo "bash scaffolds_search.sh <JobID>"

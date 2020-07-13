@@ -22,7 +22,7 @@
 #>  Version 1.0 (June 2020)
 #>  Manuscript in preparation, 2020
 
- * Written by Satyanarayana Rao (SCFBio, IITD currently at University of Colorado, Denve) and Goutam Mukherjee
+ * Written by Satyanarayana Rao (SCFBio, IITD currently at University of Colorado, Denver) and Goutam Mukherjee
  *Purpose: Calculate physicochemical parameters of active site of a protein.
  * How to run:
  * ./protein_param_calc <Output of protein-res-cm-cal.exe> <Output of maxD_calculator.exe> <Center of mass of protein active site (this information is passed as an argument)> 

@@ -38,8 +38,8 @@ then
 	echo "bash lig_parameters_gen.sh <filename.txt>"
         exit
 fi
-	echo -e '\033[1m This script will autoreplace the all parameter files which are saved into the <path_to_RASPDplus_repository>/customized_data/ folder\033[0m'
-	echo -e '\033[1m It is strongly recommend before you run this script, please take a backup of all the files which were saved in <path_to_RASPDplus_repository>/customized_data/ folder\033[0m'
+	echo -e '\033[1m This script will autoreplace the all parameter files which are saved into the <path_to_RASPD+_repository>/customized_data/ folder\033[0m'
+	echo -e '\033[1m It is strongly recommend before you run this script, please take a backup of all the files which were saved in <path_to_RASPD+_repository>/customized_data/ folder\033[0m'
 	echo -e '\033[7m Proceed to run?\033[0m'
 read answer
 	if [ "$answer" != "${answer#[Yy]}" ]
