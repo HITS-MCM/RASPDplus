@@ -15,7 +15,7 @@
 #>  RASPD+: Fast protein-ligand binding free energy prediction using simplified physicochemical features
 #>  Authors: Stefan Holderbach, Lukas Adam, B. Jayaram, Rebecca C. Wade, Goutam Mukherjee
 #>  Version 1.0 (June 2020)
-#>  Manuscript in preparation, 2020
+#>  ChemRxiv preprint (https://doi.org/10.26434/chemrxiv.12636704.v1), 2020
 
 # RASPD+ inference script to run predictions from a saved models folder
 # Author(s): Stefan Holderbach

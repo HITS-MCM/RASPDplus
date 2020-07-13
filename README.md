@@ -1,5 +1,7 @@
 # RASPD+: Fast protein-ligand binding free energy prediction using simplified physicochemical features
 
+See the preprint on ChemRxiv: https://doi.org/10.26434/chemrxiv.12636704.v1
+
 This repository contains the code used to create the RASPD+ descriptors and machine learning models and shell scripts for approximate protein ligand binding energy useful for prefiltering in virtual screening experiments.
 
 Additional data and the associated model weights can be found on zenodo (https://doi.org/10.5281/zenodo.3937426)
