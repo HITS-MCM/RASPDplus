@@ -1,0 +1,124 @@
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#>  Copyright (c) 2013 2014 2015 2016 2017 2018 2019 2020
+#>  Heidelberg Institute of Theoretical Studies (HITS, www.h-its.org)
+#>  Schloss-Wolfsbrunnenweg 35
+#>  69118 Heidelberg, Germany
+#>
+#>  Supercomputing Facility for Bioinformatics and Computational Biology, IIT Delhi (http://www.scfbio-iitd.res.in/)
+#>  Indian Institute of Technology
+#>  Hauz Khas, New Delhi - 110016, India
+#>
+#>  Please send your contact address to get information on updates and
+#>  new features to "mcmsoft@h-its.org". Questions will be
+#>  answered as soon as possible.
+#>  References:
+#>  A rapid identification of hit molecules for target proteins via physico-chemical descriptors.
+#>  (2013) Phys. Chem. Chem. Phys., 15, 9107-9116.
+#>  Authors: Goutam Mukherjee and B. Jayaram
+#>  Version 1.0 (Aptil 2013)
+
+#>  RASPD+: Fast protein-ligand binding free energy prediction using simplified physicochemical features
+#>  Authors: Stefan Holderbach, Lukas Adam, Rebecca C. Wade, B. Jayaram, and Goutam Mukherjee
+#>  Version 1.0 (June 2020)
+#>  Manuscript in preparation, 2020
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+****How to run*****
+Machine used for performance testing: Intel® Core™ i7-9750H CPU (Ubuntu 18.04 LTS laptop)
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#<  Example-1: 
+#<  Screen a million molecule library:
+#<  Step 1: source ../config/init.sh 
+#<  Step 2: bash job_run_million.sh 1NHZ 486 all
+#<  Output: 24190489_million_1NHZ_486_all/FinalResult.txt (omitted due to large file size)
+#<  Run time:   17 min 3 sec (for 1043459 molecules)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#<  Example-2:
+#<  Substructure search
+#<  Step 1: source ../config/init.sh (if you do not close the terminal, then this step is not required to run)
+#<  Step 2: bash scaffolds_search.sh 24190489_million_1NHZ_486_all
+#<  Output: 
+#<	(i)  target_scaffold_be.txt (contains the predicted binding energy of the molecules which possess the query SMILES moiety)
+#<	(ii) target_scaffold.smi (contains the SMILES codes of thoes molecules whicn contains the query SMILES moiety)
+#<  Run time:   6 min 59 sec. (per 1043459 molecules per query SMILES string)
+#<  Please note that, there were 13224 SMILES codes which were failed during canonicalization by RDKit. Hence, these SMILES codes 
+#<  were discarded by the script, scaffolds_search.sh.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#<  Example-3:
+#<  Generate physicochemical parameters for customized small molecules
+#<  Step 1: source ../config/init.sh (if you do not close the terminal, then this step is not required to run)
+#<  Step 2: bash lig_parameters_gen.sh molecules.txt 
+#<  Output: 
+#<        (a) Autosaved parameters at the ../customized_data/ folder
+#<        (b) @......../ folder which contains the caiculation details 
+#<  Run time:   43 sec. (per 100 molecules)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#<  Example-4:
+#<  Screen a customized molecule library (when physicochemical properties are already parameterized):
+#<  Step 1: source ../config/init.sh (if you do not close the terminal, then this step not required to run)
+#<  Step 2: bash job_run_customized.sh 1NHZ 486 all
+#<  Output: 57571057_customized_1NHZ_486_all/FinalResult.txt
+#<  Run time:   6 sec. (per 100 molecules per protein target)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#<  Example-5:
+#<  Screen a customized molecule library (when physicochemical properties are not parameterized):
+#<  Step 1: source ../config/init.sh (if you do not close the terminal, then this step not required to run)
+#<  Step 2: bash single_molecule_scanning.sh molecules.txt 1NHZ.pdb 486 all
+#<  Output: 42765829_smile_screening_1NHZ_486_all/FinalResult.txt
+#<  Run time:   56 sec. (per 100 molecules per protein target)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+#<  /*
+#<  Please note that the predicted energies may differ for multiple run of the single_molecule_scanning.sh script against 
+#<  the same input SMILES codes (say, here molecules.txt) and the same target protein (say, here 1NHZ.pdb).
+#<  Since, the molecules were converted from SMILES to pdb by openbabel and two different conformations may generate by babel
+#<  programme if we run twice the babel command on the same input SMILES string. This will change the Dmax value and thus a
+#<  change in the predicted energies.
+#<  */
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#<  Example-6:
+#<  Screen a approved drug molecule library (when physicochemical properties are already parameterized):
+#<  The 3D coordinates of approved drugs were retrived from ZINC15 dataset
+#<  url: https://zinc.docking.org/catalogs/dbap/substances/
+#<  These mlecules were parameterized by edited lig_parameters_gen.sh and store the parameters at the 
+#<  ../customized_data/parameters_approved_drugs_3722/ directory.
+#<  Step 1: cp ../customized_data/parameters_approved_drugs_3722/* ../customized_data/
+#<  Step 2: source ../config/init.sh (if you do not close the terminal, then this step not required to run)
+#<  Step 3: bash job_run_customized.sh 6lu7homodimer DRG all
+#<  Output: 89252797_customized_6lu7homodimer_DRG_all/FinalResult.txt
+#<  Run time:   11 sec. (per 3722 molecules per protein target)
+#<  Please note that ZINCID of these molecule can be obtained at the "approved_canonical.txt" file.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#<  Example-7:
+#<  Screen a customized molecule library (when physicochemical properties are not parameterized):
+#<  Step 1: source ../config/init.sh (if you do not close the terminal, then this step not required to run)
+#<  Step 2: bash single_molecule_scanning.sh approved_canonical.txt 6lu7homodimer.pdb DRG all
+#<  Output: 56128604_smile_screening_6lu7homodimer_DRG_all/FinalResult.txt
+#<
+#<  Run time:   26 min.(per 3722 molecules per protein target)
+#<  Please note here, the run time is longer due to the file conversion from SMILES to 3D formats of 3722 moleules.
+#<  If a molecules contains more than one stereogenic centers, then babel programme takes time for file conversion.
+#<
+#<  For some molecule you may get a "Segmentation fault      (core dumped)" message. 
+#<  This message has appeared when there is a problem with the input file, i.e.; 3D coordinates of molecule. 
+#<  Source of error in 3D coordinates of molecule:
+#<  (i) error in file conversion from SMILES to pdb
+#<  (ii) improper structural parameters of molecule
+#<  (iii) a large macrocyclic ring containing molecule etc.
+#<
+#<  Physicochemical properties of compounds generated by babel programme may differ than the properties computed from the 
+#<  mol2 coordinates downloaded from ZINC15 database. This is due to the difference in ionization state or, 
+#<  DMax value of the molecule.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
