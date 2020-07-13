@@ -45,7 +45,7 @@ The folder `ml` contains the code to train and evaluate the machine learning mod
 
 ### `weights`
 
-In this folder the model weights are placed. You might need to download them from zenodo (https://doi.org/10.5281/zenodo.3937426)
+In this folder the model weights are placed. A download of the primary model weights from the zenodo store (https://doi.org/10.5281/zenodo.3937426) is automatically performed upon running `install.sh`
 
 ### `data`
 
