@@ -72,6 +72,12 @@ make
 
 cd $raspd_root
 
-wget 'https://zenodo.org/record/3937426/files/weights.tar.gz'
-tar -xzf weights.tar.gz
+if [ ! -f weights/scalers.pkl ]; then
+    echo "Downloading model weights!"
+
+	wget 'https://zenodo.org/record/3937426/files/weights.tar.gz'
+	tar -xzf weights.tar.gz
+else
+	echo "Existing model weights found at $raspd_root/weights. Skipping download"
+fi
 
