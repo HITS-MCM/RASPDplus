@@ -45,6 +45,19 @@ then
 	exit 1
 fi
 
+if [ -z "$TRAPP" ] 
+then
+	echo "Please set TRAPP to the root of your TRAPP installation (version >=4.0.1)"
+	echo "   export TRAPP=<where TRAPP is installed>"
+	exit 1
+fi
+
+if [ ! -f $TRAPP/scripts/smallset_genX.py ]; then
+    echo "Please update TRAPP to version 4.0.1 or greater"
+    echo "Aborting installation!"
+	exit 1
+fi
+
 eval "$($conda_root/condabin/conda shell.bash hook)"
 
 conda env create -f $raspd_root/raspdml.yml
