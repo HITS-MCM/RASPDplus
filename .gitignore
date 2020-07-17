@@ -11,5 +11,9 @@ __pycache__/
 .idea/
 example/*.sh
 example/*/*
+example/ligandinfo
 customized_data/*
 config/my_init.sh
+weights.tar.gz
+weights/*
+FinalResult.txt
