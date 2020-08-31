@@ -16,8 +16,8 @@ This folder contains the code to train end evaluate the RASPD+ machine learning 
     * Benchmark results from other methods as seen in Jiménez et al. 2018
   * `verify_old_RASPD.ipynb`
     * read results data from the old RASPD approach (Mukherjee et al. 2011)
-  * `enrichment_assessment.ipynb`
-    * Compute enrichment factors for evaluation on parts of the Directory of useful Decoys (DUD) data set
+  * `dud_e_enrichment_assessment.ipynb`
+    * Compute enrichment factors for evaluation on the Directory of useful Decoys - Enhanced (DUD-E) data set
   * `launch_runs.sh`
     * How to run the `train_and_eval.py` script to obtain the models used in `plot_results.ipynb`
 * `pdbbind_descriptors.xlsx`

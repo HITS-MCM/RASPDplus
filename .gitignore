@@ -17,3 +17,4 @@ config/my_init.sh
 weights.tar.gz
 weights/*
 FinalResult.txt
+dude/
