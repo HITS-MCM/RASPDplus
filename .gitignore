@@ -18,3 +18,11 @@ weights.tar.gz
 weights/*
 FinalResult.txt
 dude/
+dude_raspd_old/
+external_test_sets/
+run_outputs/
+
+dude.tar.gz
+dude_raspd_old.tar.gz
+external_test_sets.tar.gz
+run_outputs.tar.gz
