@@ -126,3 +126,37 @@ bash single_molecule_scanning.sh lig.pdb 1NHZ.pdb 486 erf
 #>  Output file name is: FinalResult.txt
 #>  Output file is there inside the JobID folder to be created while running this script.
 **/
+
+#>  Script name: RASPD+_Analysis.R
+/**
+Author: Jonathan Teuffel, Heidelberg Institute for Theoretical Studies (HITS) and Heidelberg University, Germany
+How to run:
+When FinalResults.txt contains 2 columns:
+Rscript RASPD+_Analysis.R integer/float number [default value: 1.5]
+Say,
+Rscript RASPD+_Analysis.R 1
+
+When FinalResults.txt contains 8 columns:
+Rscript RASPD+_Analysis.R f1 [Filter 1]
+Or:
+Rscript RASPD+_Analysis.R f2 [Filter 2, a default option]
+
+Requirements:
+• Latest version of R
+• corrplot package (https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-
+intro.html)
+• RASPD+ output file: FinalResult.txt
+• Target.smi file: SMILES strings of compounds to be filtered
+
+Output files: 
+• png images of score distributions before applying filters (for all three filters, i.e.;
+sigma/ f1/f2-filters), 
+• box plots of scores before and after applying filters (only for f1 and f2-filters)
+• correlation plots (only for f1 and f2-filters)
+• mols_pass.csv and mols_pass.smi files (for all three filters, i.e.; sigma/ f1/f2-filters).
+
+mols_pass.csv contains the compound IDs, SMILES codes and predicted binding free energies of
+the selected molecules that have passed through either the f1 or the f2 filter.
+mols_pass.smi contains only the SMILES codes of the molecules that passed through either the f1
+or the f2 filter.
+**/
