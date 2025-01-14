@@ -90,7 +90,8 @@ int main(int argc, char *argv[])
 			zcod[7]=s[53];
 			zcod[8]='\0';
 			zcod1=atof(zcod);
-			
+				
+			strncpy(resid, "DRG", 3);
 			printf("%-6s%5d %-4s %3s   %3d    %8.3f%8.3f%8.3f\n",atom,atomno,atmsmb,resid,resno,xcod1,ycod1,zcod1); 
 			atomno++;
 			}
